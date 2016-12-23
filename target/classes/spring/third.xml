@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--&lt;!&ndash; 先配置工厂类&ndash;&gt;-->
+    <!--<bean id="demo3BeanFactory" class="Demo3BeanFactory" scope="prototype"></bean>-->
+
+    <!--&lt;!&ndash;使用 factory-bean 来配置工厂&ndash;&gt;-->
+    <!--<bean id="user"  factory-bean="demo3BeanFactory" factory-method="getUser" scope="prototype" ></bean>-->
+
+    <bean id="user" class="com.amence.spring.third.User" init-method="userInit" destroy-method="userDestroy">
+        <property name="userName" value="Amence"></property>
+        <property name="password" value="123"></property>
+
+
+    </bean>
+
+</beans>
